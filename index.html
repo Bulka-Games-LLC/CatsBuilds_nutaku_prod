@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="Example WebGL Game" author="example" thumbnail="" screenshot="" height="1080" width="1920">
+        <Require feature="opensocial-0.8" />
+        <Require feature="opensocial-payment" />
+        <Require feature="nutaku" />
+    </ModulePrefs>
+    <Content preferred_width="1920" type="html" view="canvas">
+    <![CDATA[
+        <link rel="stylesheet" href="TemplateData/style.css">        
+        <script type="text/javascript">
+ 
+		var buildUrl = "Build";
+		var loaderUrl = buildUrl + "/CatBuilds_ntk.loader.js";
+        var config = {
+			dataUrl: buildUrl + "/CatBuilds_ntk.data.unityweb",
+			frameworkUrl: buildUrl + "/CatBuilds_ntk.framework.js.unityweb",
+			codeUrl: buildUrl + "/CatBuilds_ntk.wasm.unityweb",
+			streamingAssetsUrl: "StreamingAssets",
+			companyName: "Bulka Games LLC",
+			productName: "Cats",
+			productVersion: "1.3.3",
+			};
+ 
+            var gameInstance;
+            var canvas;
+             
+			var script = document.createElement("script");
+			script.src = loaderUrl;
+			
+			script.onload = () => {
+			canvas = document.querySelector("#unity-canvas");
+			createUnityInstance(canvas, config, (progress) => {
+                  console.log(progress);
+                  }).then((gameInstance) => {
+                    console.log("WAS LOADED");
+                  }).catch((message) => {
+                    alert(message);
+                  });
+			}
+ 
+            //gadgets.util.registerOnLoadHandler(script);
+			document.body.appendChild(script);
+        </script>
+         
+        <body style="min-height: 1080px">
+            <div class="main" id="main">
+                <div class="mainLeft"></div>
+                <div class="mainRight"></div>
+                <div class="webgl-content" id="webglcontent" style="min-height: 1080px">
+                    <div id="unity-container"  class="unity-desktop">
+                        <canvas id="unity-canvas"></canvas>
+                    </div>
+                    <div id="LogoBG" class="Logos LogoBG"></div>
+                    <div id="LogoA"  class="Logos LogoA"></div>
+                    <div id="LogoB"  class="Logos LogoB"></div>
+                </div>
+                // <div id="Footer" class="Footer" onclick="gameInstance.SetFullscreen(1)"></div>
+            </div>
+        </body>
+    ]]>
+    </Content>
+</Module>
