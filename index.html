@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-    <ModulePrefs title="Kinky Cats" author="Bulka Games LLC" thumbnail="" screenshot="" height="1080" width="1920">
+    <ModulePrefs title="Kinky Cats" author="Bulka Games LLC" thumbnail="" screenshot="" height="850" width="1920">
         <Require feature="opensocial-0.8"/>
         <Require feature="opensocial-payment"/>
         <Require feature="nutaku"/>
         <Require feature="dynamic-height" />
         <Link rel="payment.handler" href="https://nutaku-1.webhooks.balancy.dev/v1/nutaku/confirmation"/>
     </ModulePrefs>
-    <Content preferred_width="1920" preferred_height="1080" type="html" view="canvas">
+    <Content preferred_width="1920" preferred_height="850" type="html" view="canvas">
         <![CDATA[
         <script src="https://kinky-cats-nutaku-prod.b-cdn.net/Build/Builds_ntk_prod.framework.js"></script>
         <script src="https://kinky-cats-nutaku-prod.b-cdn.net/Build/Builds_ntk_prod.loader.js"></script>
@@ -48,7 +48,7 @@
                 streamingAssetsUrl: "https://kinky-cats-nutaku-prod.b-cdn.net/StreamingAssets",
                 companyName:        'Bulka Games LLC',
                 productName:        'Kinky Cats',
-                productVersion:     "1.5.9",
+                productVersion:     "1.6.0",
                 showBanner:         unityShowBanner,
             };
 
@@ -104,9 +104,9 @@
 
             gadgets.util.registerOnLoadHandler(init);
         </script>
-        <body style="text-align: center; padding: 0; border: 0; margin: 0; min-height: 1080px;">
+        <body style="text-align: center; padding: 0; border: 0; margin: 0; min-height: 850px;">
             <div id="unity-container" class="unity-desktop">
-                <canvas id="unity-canvas" width=1920 height=1080></canvas>
+                <canvas id="unity-canvas" width=1920 height=850></canvas>
                 <div id="unity-loading-bar">
                     <div id="unity-logo"></div>
                     <div id="unity-progress-bar-empty">
