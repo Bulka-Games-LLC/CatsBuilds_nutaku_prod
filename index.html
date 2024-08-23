@@ -23,14 +23,18 @@
                 streamingAssetsUrl: "https://kinky-cats-nutaku-prod.b-cdn.net/StreamingAssets",
                 companyName:        'Bulka Games LLC',
                 productName:        'Kinky Cats',
-                productVersion:     "1.8.3",
+                productVersion:     "1.9.1",
             };
 			
             var canvas;
+			var bar;
+			var barParent;
              
             function init() {
 			    console.warn('init');
                 canvas = document.querySelector("#unity-canvas"); //or getElementById('unity-canvas')
+				bar = document.querySelector("#progress-bar-primary");
+				barParent = document.querySelector("#logo-div");
 				
 				canvas.style.width  = '100%';
                 canvas.style.height = '100%';
@@ -38,13 +42,11 @@
 				
 				
                 createUnityInstance(canvas, config, (progress) => {
-                  console.log("*");
+				bar.style.width = 100 * progress + "%";
+                  //console.log("*");
                   }).then((unityInstance) => {
 				    gameInstance = unityInstance;
-					
-					var bb = document.querySelector("#unity-body");
-					bb.style.backgroundImage = '';
-					
+					barParent.parentNode.removeChild(barParent);
                     console.log("WAS LOADED");
                   }).catch((message) => {
                     alert(message);
@@ -54,10 +56,20 @@
             gadgets.util.registerOnLoadHandler(init);
         </script>
          
-        <body id="unity-body" style="height: 856px ; margin: 0; background-image: url('https://kinky-cats-nutaku-prod.b-cdn.net/TemplateData/bulka-logo.jpg'); background-size: 100%; background-position:center; background-repeat: no-repeat;">			
-				<div id="unity-container"  class="unity-desktop" style="display: contents">					
-					<canvas id="unity-canvas"></canvas>
+        <body id="unity-body" style="height: 856px; margin: 0;">
+			<div id="unity-container" class="unity-desktop" style="display: contents">		
+				<div id="logo-div" style="aspect-ratio: 1900/856; object-fit: cover; position: absolute">
+				
+				<img src="https://kinky-cats-nutaku-prod.b-cdn.net/TemplateData/bulka-logo.jpg"
+				style="object-fit: cover;"
+				/>
+				
+				<img id="progress-bar-primary" src="https://kinky-cats-nutaku-prod.b-cdn.net/TemplateData/progress-bar-full.png"
+				style="width:0px; height:10px; left:0px; bottom:0px; position:absolute;"
+				/>
 				</div>			
+				<canvas id="unity-canvas" position=absolute></canvas>				
+			</div>
         </body>
     ]]>
     </Content>
