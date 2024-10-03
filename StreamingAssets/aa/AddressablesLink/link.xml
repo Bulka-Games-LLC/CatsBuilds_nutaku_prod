@@ -27,10 +27,10 @@
     <type fullname="Cats.Phrase" preserve="nothing" serialized="true" />
     <type fullname="Cats.PhrasesBlock" preserve="nothing" serialized="true" />
     <type fullname="Cats.Services.Localize.LocalString" preserve="nothing" serialized="true" />
-    <type fullname="Cats.Screens.EventGame.AnimStatePlayer" preserve="nothing" serialized="true" />
-    <type fullname="Cats.Events.EventContentHandler" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.SkinConfig" preserve="nothing" serialized="true" />
     <type fullname="Cats.Events.EventConfig/EventSkin" preserve="nothing" serialized="true" />
+    <type fullname="Cats.Screens.EventGame.AnimStatePlayer" preserve="nothing" serialized="true" />
+    <type fullname="Cats.Events.EventContentHandler" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.Biography" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.CardContentConfig" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.ChatConfig" preserve="nothing" serialized="true" />
@@ -53,6 +53,7 @@
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
     <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceSprite" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[Cats.Events.EventConfig]" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
@@ -131,6 +132,9 @@
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Canvas" preserve="all" />
     <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityUIExtensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.Extensions.UIParticleSystem" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.TextCoreFontEngineModule">
     <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
