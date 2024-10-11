@@ -31,6 +31,7 @@
     <type fullname="Cats.Events.EventConfig/EventSkin" preserve="nothing" serialized="true" />
     <type fullname="Cats.Screens.EventGame.AnimStatePlayer" preserve="nothing" serialized="true" />
     <type fullname="Cats.Events.EventContentHandler" preserve="nothing" serialized="true" />
+    <type fullname="Cats.Events.QuestEventContentHandler" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.Biography" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.CardContentConfig" preserve="nothing" serialized="true" />
     <type fullname="Cats.Characters.ChatConfig" preserve="nothing" serialized="true" />
