@@ -14,6 +14,9 @@
     <type fullname="Cats.PhrasePlayer" preserve="all" />
     <type fullname="Cats.Screens.Board.QuestIconsConfig" preserve="all" />
     <type fullname="Cats.Screens.EventGame.EventAnimationPlayer" preserve="all" />
+    <type fullname="Cats.Screens.VipRooms.VipGirlClick" preserve="all" />
+    <type fullname="Cats.Screens.VipRooms.VipRoom" preserve="all" />
+    <type fullname="Cats.Screens.VipRooms.VipRoomCharacter" preserve="all" />
     <type fullname="Cats.Services.SkeletonStateContoller" preserve="all" />
     <type fullname="Cats.TransitionsHandler" preserve="all" />
     <type fullname="Cats.World.EmilyWorldCharacter" preserve="all" />
