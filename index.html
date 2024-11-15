@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="Kinky Cats" author="Bulka Games LLC" thumbnail="" screenshot="" height="856" width="1900">
+        <Require feature="opensocial-0.8"/>
+        <Require feature="opensocial-payment"/>
+        <Require feature="nutaku"/>
+        <Require feature="dynamic-height" />
+        <Link rel="payment.handler" href="https://nutaku-1.webhooks.balancy.dev/v1/nutaku/confirmation"/>
+    </ModulePrefs>
+   <Content preferred_width="1920" type="html" view="canvas">
+    <![CDATA[
+        <script src="https://kinky-cats.b-cdn.net/Build/CatsBuilds_nutaku_prod.framework.js"></script>
+        <script src="https://kinky-cats.b-cdn.net/Build/CatsBuilds_nutaku_prod.loader.js"></script>
+        <script type="text/javascript">
+		
+			  let gameInstance;
+			  const balancyData = {};
+			  const buildUrl = 'https://kinky-cats.b-cdn.net/Build';
+			  const config   = {
+                dataUrl:            buildUrl + '/CatsBuilds_nutaku_prod.data',
+                frameworkUrl:       buildUrl + '/CatsBuilds_nutaku_prod.framework.js',
+                codeUrl:            buildUrl + '/CatsBuilds_nutaku_prod.wasm',
+                streamingAssetsUrl: "https://kinky-cats.b-cdn.net/StreamingAssets",
+                companyName:        'Bulka Games LLC',
+                productName:        'Kinky Cats',
+                productVersion:     "2.8.6",
+            };
+			
+            var canvas;
+			var bar;
+			var barParent;
+             
+            function init() {
+			    console.warn('init');
+                canvas = document.querySelector("#unity-canvas"); //or getElementById('unity-canvas')
+				bar = document.querySelector("#progress-bar-primary");
+				barParent = document.querySelector("#logo-div");
+				
+				canvas.style.width  = '100%';
+                canvas.style.height = '100%';
+				gadgets.window.adjustHeight();
+				
+				
+                createUnityInstance(canvas, config, (progress) => {
+				bar.style.width = 100 * progress + "%";
+                  //console.log("*");
+                  }).then((unityInstance) => {
+				    gameInstance = unityInstance;
+					barParent.parentNode.removeChild(barParent);
+                    console.log("WAS LOADED");
+                  }).catch((message) => {
+                    alert(message);
+                  });
+            }
+ 
+            gadgets.util.registerOnLoadHandler(init);
+        </script>
+         
+        <body id="unity-body" style="height: 856px; margin: 0;">
+			<div id="unity-container" class="unity-desktop" style="display: contents">		
+				<div id="logo-div" style="aspect-ratio: 1900/856; object-fit: cover; position: absolute">
+				
+				<img src="https://kinky-cats.b-cdn.net/TemplateData/bulka-logo.jpg"
+				style="object-fit: cover;"
+				/>
+				
+				<img id="progress-bar-primary" src="https://kinky-cats.b-cdn.net/TemplateData/progress-bar-full.png"
+				style="width:0px; height:10px; left:0px; bottom:0px; position:absolute;"
+				/>
+				</div>			
+				<canvas id="unity-canvas" position=absolute></canvas>				
+			</div>
+        </body>
+    ]]>
+    </Content>
+</Module>
